@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Commands>
+    <ScriptAction>
+      <ScriptCommand xsi:type="SeleniumBrowserCreateCommand" CommandID="1b9a1cc9-1bdf-4264-a7a1-4d6d5e78e348" CommandName="SeleniumBrowserCreateCommand" IsCommented="false" SelectionName="ブラウザの起動" DefaultPause="0" LineNumber="1" PauseBeforeExeucution="false" v_Comment="ブラウザ起動" CommandEnabled="true" v_InstanceName="{webBrowser}" v_InstanceTracking="インスタンスを破棄" v_BrowserWindowOption="標準" v_EngineType="Chrome" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="SeleniumBrowserNavigateURLCommand" CommandID="a0a11dd8-1d79-45e7-a0cb-b605b99e83ef" CommandName="SeleniumBrowserNavigateURLCommand" IsCommented="false" SelectionName="URLにアクセス" DefaultPause="0" LineNumber="2" PauseBeforeExeucution="false" v_Comment="Slack組込Chフリー" CommandEnabled="true" v_InstanceName="{webBrowser}" v_URL="{urlSlackCh}" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="SeleniumBrowserElementActionCommand" CommandID="256a7ef9-557a-4eca-acaf-0e9fd35fcfc9" CommandName="SeleniumBrowserElementActionCommand" IsCommented="false" SelectionName="各種機能" DefaultPause="0" LineNumber="3" PauseBeforeExeucution="false" v_Comment="//div[@Class='sc-eAudoH dDveJb']//ul テキスト取得" CommandEnabled="true" v_InstanceName="{webBrowser}" v_SeleniumSearchType="XPathで検索" v_SeleniumSearchParameter="//div[@Class='sc-eAudoH dDveJb']//ul">
+        <v_SeleniumElementAction>テキストをゲット</v_SeleniumElementAction>
+        <v_WebActionParameterTable>
+          <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+            <xs:element name="WebActionParamTable20210228.012828">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Parameter_x0020_Name" type="xs:string" minOccurs="0" />
+                  <xs:element name="Parameter_x0020_Value" type="xs:string" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="WebActionParamTable20210228.012828" msdata:UseCurrentLocale="true">
+              <xs:complexType>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                  <xs:element ref="WebActionParamTable20210228.012828" />
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:schema>
+          <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+            <DocumentElement>
+              <WebActionParamTable20210228.012828 diffgr:id="WebActionParamTable20210228.0128282" msdata:rowOrder="0" diffgr:hasChanges="inserted">
+                <Parameter_x0020_Name>Variable Name</Parameter_x0020_Name>
+                <Parameter_x0020_Value>{htmlText}</Parameter_x0020_Value>
+              </WebActionParamTable20210228.012828>
+            </DocumentElement>
+          </diffgr:diffgram>
+        </v_WebActionParameterTable>
+      </ScriptCommand>
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="VariableCommand" CommandID="78e87b35-5cb3-42fc-8a2f-999e34038d93" CommandName="VariableCommand" IsCommented="false" SelectionName="変数の設定" DefaultPause="0" LineNumber="4" PauseBeforeExeucution="false" CommandEnabled="true" v_userVariableName="textFilePath" v_Input="{Folder.RootPath}{textFilePath}" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="WriteTextFileCommand" CommandID="872d0516-3d00-4179-84fb-a10d344c272d" CommandName="WriteTextFileCommand" IsCommented="false" SelectionName="書き込み" DefaultPause="0" LineNumber="5" PauseBeforeExeucution="false" v_Comment="ファイル書込" CommandEnabled="true" v_FilePath="{textFilePath}" v_TextToWrite="{htmlText}" v_Overwrite="上書きする" />
+    </ScriptAction>
+    <ScriptAction>
+      <ScriptCommand xsi:type="SeleniumBrowserCloseCommand" CommandID="0d0e4dc7-65f7-4745-a51c-682d1e9f8acd" CommandName="SeleniumBrowserCloseCommand" IsCommented="false" SelectionName="ブラウザを閉じる" DefaultPause="0" LineNumber="6" PauseBeforeExeucution="false" v_Comment="ブラウザを閉じる" CommandEnabled="true" v_InstanceName="{webBrowser}" />
+    </ScriptAction>
+  </Commands>
+  <Variables>
+    <ScriptVariable>
+      <VariableName>htmlText</VariableName>
+      <VariableValue xsi:type="xsd:string"></VariableValue>
+    </ScriptVariable>
+    <ScriptVariable>
+      <VariableName>textFile</VariableName>
+      <VariableValue xsi:type="xsd:string"></VariableValue>
+    </ScriptVariable>
+    <ScriptVariable>
+      <VariableName>textFilePath</VariableName>
+      <VariableValue xsi:type="xsd:string">\test.txt</VariableValue>
+    </ScriptVariable>
+    <ScriptVariable>
+      <VariableName>urlSlackCh</VariableName>
+      <VariableValue xsi:type="xsd:string">https://news.yahoo.co.jp/</VariableValue>
+    </ScriptVariable>
+    <ScriptVariable>
+      <VariableName>webBrowser</VariableName>
+      <VariableValue xsi:type="xsd:string"></VariableValue>
+    </ScriptVariable>
+  </Variables>
+</Script>
